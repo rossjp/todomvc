@@ -82,7 +82,7 @@ jobs:
       - run:
           name: Success
           command: |
-            exit 0
+            exit 1
       - my_orb/my_slack
 
 workflows:
