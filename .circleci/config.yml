@@ -18,7 +18,7 @@ orbs:
               mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
-                    "text": ":no_entry: $CIRCLE_BRANCH Build Failed in $CIRCLE_PROJECT_REPONAME",
+                    "text": ":no_entry: Build Failed in $CIRCLE_PROJECT_REPONAME",
                     "blocks": [
                         {
                             "type": "section",
@@ -47,7 +47,7 @@ orbs:
               mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
-                    "text": ":white_check_mark: $CIRCLE_BRANCH Build Succeeded in $CIRCLE_PROJECT_REPONAME",
+                    "text": ":white_check_mark: Build Succeeded in $CIRCLE_PROJECT_REPONAME",
                     "blocks": [
                         {
                             "type": "section",
