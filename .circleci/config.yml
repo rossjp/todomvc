@@ -41,8 +41,7 @@ workflows:
         - slack:
             requires:
               - job1
-              - job2
-            pre-steps:
+            post-steps:
               - slack/notify:
                   event: fail
                   custom: |
