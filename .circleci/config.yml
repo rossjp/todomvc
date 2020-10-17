@@ -7,12 +7,24 @@ orbs:
 jobs:
   job1:
     docker:
-    - image: circleci/python:3.6
+      - image: circleci/python:3.6
     steps:
       - checkout
       - run:
           command: |
             echo "Hello world"
+  job2:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: Success
+          command: |
+            exit 0
+  slack:
+    docker:
+      - image: cimg/base:stable
+    steps:
       - slack/notify:
           event: pass
           custom: |
@@ -48,3 +60,9 @@ workflows:
     jobs:
         - job1:
             context: ross-test
+        - job2:
+            context: ross-test
+        - slack:
+            requires:
+              - job1
+              - job2
