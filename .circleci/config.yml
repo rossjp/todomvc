@@ -22,7 +22,7 @@ jobs:
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": "*Success:* $CIRCLE_PROJECT_USERNAME build $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n |$CIRCLE_BUILD_URL| |$CIRCLE_PR_NUMBER| |$CIRCLE_PR_REPONAME| \n\n|$CIRCLE_PR_USERNAME| |$CIRCLE_PULL_REQUEST| |$CIRCLE_REPOSITORY_URL| |$CIRCLE_SHA1|"
+                            "text": ":tada: <span style='color:green'><b>Success</b></span> $CIRCLE_PROJECT_USERNAME build $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n$CIRCLE_BUILD_URL"
                         }
                     }
                 ]
