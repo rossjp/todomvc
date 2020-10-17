@@ -18,7 +18,7 @@ orbs:
                             "type": "section",
                             "text": {
                                 "type": "mrkdwn",
-                                "text": ":x:   *FAILURE*\n*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* (build $CIRCLE_BUILD_NUM) in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed."
+                                "text": ":x:   *FAILURE*\n*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* \(build $CIRCLE_BUILD_NUM\) in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed."
                             }
                         },
                         {
@@ -46,7 +46,7 @@ orbs:
                             "type": "section",
                             "text": {
                                 "type": "mrkdwn",
-                                "text": ":white_check_mark:   *SUCCESS*\n*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* (build $CIRCLE_BUILD_NUM) in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good."
+                                "text": ":white_check_mark:   *SUCCESS*\n*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* \(build $CIRCLE_BUILD_NUM\) in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good."
                             }
                         },
                         {
