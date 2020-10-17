@@ -4,7 +4,7 @@ version: 2.1
 orbs:
   my_orb:
     orbs:
-      slack: circleci/slack@4.0
+      slack: circleci/slack@4.0.1
     commands:
       my_slack:
         steps:
