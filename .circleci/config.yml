@@ -8,8 +8,13 @@ orbs:
     commands:
       my_slack:
         steps:
+          - run:
+              name: Select slack mentions
+              command: |
+                echo "export STRATA_SLACK_MENTIONS=ross" >> $BASH_ENV
           - slack/notify:
               event: fail
+              mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
                     "attachments": [{
@@ -40,6 +45,7 @@ orbs:
                 }
           - slack/notify:
               event: pass
+              mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
                     "attachments": [{
