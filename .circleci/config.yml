@@ -44,7 +44,7 @@ orbs:
                             "type": "section",
                             "text": {
                                 "type": "mrkdwn",
-                                "text": ":white_check_mark:   *SUCCESS*\n*$CIRCLE_PROJECT_USERNAME* *$CIRCLE_JOB* build in       *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good."
+                                "text": ":white_check_mark:   *SUCCESS*\n*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build in       *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good."
                             }
                         },
                         {
