@@ -22,10 +22,18 @@ orbs:
                         "color": "#ed2610",
                         "blocks": [
                             {
+                    			"type": "header",
+                    			"text": {
+                    				"type": "mrkdwn",
+                                    "text": ":x: *Failure*",
+                    				"emoji": true
+                    			}
+                    		},
+                            {
                                 "type": "section",
                                 "text": {
                                     "type": "mrkdwn",
-                                    "text": ":x:   *Failure*\n*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed.\n@$STRATA_SLACK_MENTIONS"
+                                    "text": "*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed.\n@$STRATA_SLACK_MENTIONS"
                                 }
                             },
                             {
@@ -53,10 +61,18 @@ orbs:
                         "color": "#2ad365",
                         "blocks": [
                             {
+                    			"type": "header",
+                    			"text": {
+                    				"type": "mrkdwn",
+                                    "text": ":white_check_mark: *Success*",
+                    				"emoji": true
+                    			}
+                            },
+                            {
                                 "type": "section",
                                 "text": {
                                     "type": "mrkdwn",
-                                    "text": ":white_check_mark:   *Success*\n*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good.\n@$STRATA_SLACK_MENTIONS"
+                                    "text": "*$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good.\n@$STRATA_SLACK_MENTIONS"
                                 }
                             },
                             {
