@@ -2,7 +2,67 @@
 version: 2.1
 # Use a package of configuration called an orb.
 orbs:
-  slack: circleci/slack@4.0
+  my_orb:
+    orbs:
+      slack: circleci/slack@4.0
+    commands:
+      my_slack:
+        steps:
+          - slack/notify:
+              event: fail
+              custom: |
+                {
+                    "blocks": [
+                        {
+                            "type": "section",
+                            "text": {
+                                "type": "mrkdwn",
+                                "text": ":x:   *FAILURE*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in                      $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch failed.\n$CIRCLE_BUILD_URL"
+                            }
+                        },
+                        {
+                            "type": "actions",
+                            "elements": [
+                                {
+                                    "type": "button",
+                                    "text": {
+                                        "type": "plain_text",
+                                        "text": "Visit Job"
+                                    },
+                                    "url": "$CIRCLE_BUILD_URL"
+                                }
+                            ]
+                        }
+                    ]
+                }
+          - slack/notify:
+              event: pass
+              custom: |
+                {
+                    "blocks": [
+                        {
+                            "type": "section",
+                            "text": {
+                                "type": "mrkdwn",
+                                "text": ":white_check_mark:   *SUCCESS*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in       $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n$CIRCLE_BUILD_URL"
+                            }
+                        },
+                        {
+                            "type": "actions",
+                            "elements": [
+                                {
+                                    "type": "button",
+                                    "text": {
+                                        "type": "plain_text",
+                                        "text": "Visit Job"
+                                    },
+                                    "url": "$CIRCLE_BUILD_URL"
+                                }
+                            ]
+                        }
+                    ]
+                }
+
 # Orchestrate or schedule a set of jobs
 jobs:
   job1:
@@ -13,6 +73,7 @@ jobs:
       - run:
           command: |
             echo "Hello world"
+      - my_orb/my_slack
   job2:
     docker:
       - image: cimg/base:stable
@@ -21,13 +82,7 @@ jobs:
           name: Success
           command: |
             exit 1
-  slack:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - run:
-          command: |
-            exit 0
+      - my_orb/my_slack
 
 workflows:
   version: 2
@@ -38,63 +93,3 @@ workflows:
             context: ross-test
         - job2:
             context: ross-test
-        - slack:
-            context: ross-test
-            requires:
-              - job1
-              - job2
-            pre-steps:
-              - slack/notify:
-                  event: fail
-                  custom: |
-                    {
-                        "blocks": [
-                            {
-                                "type": "section",
-                                "text": {
-                                    "type": "mrkdwn",
-                                    "text": ":x:   *FAILURE*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch failed.\n$CIRCLE_BUILD_URL"
-                                }
-                            },
-                            {
-                    			"type": "actions",
-                    			"elements": [
-                    				{
-                    					"type": "button",
-                    					"text": {
-                    						"type": "plain_text",
-                    						"text": "Visit Job"
-                    					},
-                    					"url": "$CIRCLE_BUILD_URL"
-                    				}
-                    			]
-                    		}
-                        ]
-                    }
-              - slack/notify:
-                  event: pass
-                  custom: |
-                    {
-                        "blocks": [
-                            {
-                                "type": "section",
-                                "text": {
-                                    "type": "mrkdwn",
-                                    "text": ":white_check_mark:   *SUCCESS*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n$CIRCLE_BUILD_URL"
-                                }
-                            },
-                            {
-                    			"type": "actions",
-                    			"elements": [
-                    				{
-                    					"type": "button",
-                    					"text": {
-                    						"type": "plain_text",
-                    						"text": "Visit Job"
-                    					},
-                    					"url": "$CIRCLE_BUILD_URL"
-                    				}
-                    			]
-                    		}
-                        ]
-                    }
