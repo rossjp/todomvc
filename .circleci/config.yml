@@ -39,6 +39,7 @@ workflows:
         - job2:
             context: ross-test
         - slack:
+            context: ross-test
             requires:
               - job1
             post-steps:
