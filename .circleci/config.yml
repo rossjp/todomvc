@@ -40,7 +40,7 @@ orbs:
               event: pass
               custom: |
                 {
-                    "color": "#42e2f4"
+                    "color": "#42e2f4",
                     "blocks": [
                         {
                             "type": "section",
