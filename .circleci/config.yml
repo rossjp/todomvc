@@ -16,6 +16,7 @@ orbs:
           - slack/notify:
               event: fail
               mentions: $STRATA_SLACK_MENTIONS
+              text: "Build Failed"
               custom: |
                 {
                     "blocks": [
@@ -44,6 +45,7 @@ orbs:
           - slack/notify:
               event: pass
               mentions: $STRATA_SLACK_MENTIONS
+              text: ":white_check_mark: *Build Succeeded*"
               custom: |
                 {
                     "blocks": [
