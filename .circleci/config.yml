@@ -22,7 +22,7 @@ jobs:
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": ":white_check_mark:   *SUCCESS*\n$CIRCLE_PROJECT_USERNAME's build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n$CIRCLE_BUILD_URL"
+                            "text": ":white_check_mark:   *SUCCESS*\n$CIRCLE_PROJECT_USERNAME\'s build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n$CIRCLE_BUILD_URL"
                         }
                     }
                 ]
