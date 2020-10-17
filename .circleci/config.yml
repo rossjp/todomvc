@@ -34,7 +34,7 @@ jobs:
             						"type": "plain_text",
             						"text": "Visit Job"
             					},
-            					"value": "$CIRCLE_BUILD_URL"
+            					"url": "$CIRCLE_BUILD_URL"
             				}
             			]
             		}
