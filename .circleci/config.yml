@@ -20,14 +20,6 @@ orbs:
                 {
                     "blocks": [
                         {
-                			"type": "header",
-                			"text": {
-                				"type": "plain_text",
-                                "text": "Build Failed",
-                				"emoji": true
-                			}
-                		},
-                        {
                             "type": "section",
                             "text": {
                                 "type": "mrkdwn",
@@ -55,14 +47,6 @@ orbs:
               custom: |
                 {
                     "blocks": [
-                        {
-                			"type": "header",
-                			"text": {
-                				"type": "plain_text",
-                                "text": "Build Succeeded",
-                				"emoji": true
-                			}
-                        },
                         {
                             "type": "section",
                             "text": {
