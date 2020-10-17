@@ -18,8 +18,8 @@ orbs:
               mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
-                    "attachments": [{
-                        "color": "#ed2610",
+                    #"attachments": [{
+                    #    "color": "#ed2610",
                         "blocks": [
                             {
                     			"type": "header",
@@ -33,7 +33,7 @@ orbs:
                                 "type": "section",
                                 "text": {
                                     "type": "mrkdwn",
-                                    "text": ":x: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed.\n@$STRATA_SLACK_MENTIONS"
+                                    "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed.\n@$STRATA_SLACK_MENTIONS"
                                 }
                             },
                             {
@@ -50,15 +50,15 @@ orbs:
                                 ]
                             }
                         ]
-                    }]
+                        #}]
                 }
           - slack/notify:
               event: pass
               mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
-                    "attachments": [{
-                        "color": "#2ad365",
+                    #"attachments": [{
+                    #    "color": "#2ad365",
                         "blocks": [
                             {
                     			"type": "header",
@@ -89,7 +89,7 @@ orbs:
                                 ]
                             }
                         ]
-                    }]
+                        #}]
                 }
 
 # Orchestrate or schedule a set of jobs
