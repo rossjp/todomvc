@@ -26,6 +26,33 @@ jobs:
       - image: cimg/base:stable
     steps:
       - slack/notify:
+          event: fail
+          custom: |
+            {
+                "blocks": [
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": ":x:   *FAILURE*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch failed.\n$CIRCLE_BUILD_URL"
+                        }
+                    },
+                    {
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "Visit Job"
+            					},
+            					"url": "$CIRCLE_BUILD_URL"
+            				}
+            			]
+            		}
+                ]
+            }
+      - slack/notify:
           event: pass
           custom: |
             {
