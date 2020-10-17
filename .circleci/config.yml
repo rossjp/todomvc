@@ -9,10 +9,10 @@ orbs:
       my_slack:
         steps:
           - slack/notify:
-              color: '#42e2f4'
               event: fail
               custom: |
                 {
+                    "color": "#42e2f4",
                     "blocks": [
                         {
                             "type": "section",
@@ -37,10 +37,10 @@ orbs:
                     ]
                 }
           - slack/notify:
-              color: '#42e2f4'
               event: pass
               custom: |
                 {
+                    "color": "#42e2f4"
                     "blocks": [
                         {
                             "type": "section",
