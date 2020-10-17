@@ -43,7 +43,6 @@ orbs:
                 }
           - slack/notify:
               event: pass
-              mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
                     "text": ":white_check_mark: Build Succeeded in $CIRCLE_PROJECT_REPONAME",
