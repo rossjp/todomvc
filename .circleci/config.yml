@@ -18,78 +18,72 @@ orbs:
               mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
-                    #"attachments": [{
-                    #    "color": "#ed2610",
-                        "blocks": [
-                            {
-                    			"type": "header",
-                    			"text": {
-                    				"type": "plain_text",
-                                    "text": "Build Failed",
-                    				"emoji": true
-                    			}
-                    		},
-                            {
-                                "type": "section",
-                                "text": {
-                                    "type": "mrkdwn",
-                                    "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed.\n@$STRATA_SLACK_MENTIONS"
-                                }
-                            },
-                            {
-                                "type": "actions",
-                                "elements": [
-                                    {
-                                        "type": "button",
-                                        "text": {
-                                            "type": "plain_text",
-                                            "text": "Visit Job"
-                                        },
-                                        "url": "$CIRCLE_BUILD_URL"
-                                    }
-                                ]
+                    "blocks": [
+                        {
+                			"type": "header",
+                			"text": {
+                				"type": "plain_text",
+                                "text": "Build Failed",
+                				"emoji": true
+                			}
+                		},
+                        {
+                            "type": "section",
+                            "text": {
+                                "type": "mrkdwn",
+                                "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed.\n@$STRATA_SLACK_MENTIONS"
                             }
-                        ]
-                        #}]
+                        },
+                        {
+                            "type": "actions",
+                            "elements": [
+                                {
+                                    "type": "button",
+                                    "text": {
+                                        "type": "plain_text",
+                                        "text": "Visit Job"
+                                    },
+                                    "url": "$CIRCLE_BUILD_URL"
+                                }
+                            ]
+                        }
+                    ]
                 }
           - slack/notify:
               event: pass
               mentions: $STRATA_SLACK_MENTIONS
               custom: |
                 {
-                    #"attachments": [{
-                    #    "color": "#2ad365",
-                        "blocks": [
-                            {
-                    			"type": "header",
-                    			"text": {
-                    				"type": "plain_text",
-                                    "text": "Build Succeeded",
-                    				"emoji": true
-                    			}
-                            },
-                            {
-                                "type": "section",
-                                "text": {
-                                    "type": "mrkdwn",
-                                    "text": ":white_check_mark: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good.\n@$STRATA_SLACK_MENTIONS"
-                                }
-                            },
-                            {
-                                "type": "actions",
-                                "elements": [
-                                    {
-                                        "type": "button",
-                                        "text": {
-                                            "type": "plain_text",
-                                            "text": "Visit Job"
-                                        },
-                                        "url": "$CIRCLE_BUILD_URL"
-                                    }
-                                ]
+                    "blocks": [
+                        {
+                			"type": "header",
+                			"text": {
+                				"type": "plain_text",
+                                "text": "Build Succeeded",
+                				"emoji": true
+                			}
+                        },
+                        {
+                            "type": "section",
+                            "text": {
+                                "type": "mrkdwn",
+                                "text": ":white_check_mark: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good.\n@$STRATA_SLACK_MENTIONS"
                             }
-                        ]
-                        #}]
+                        },
+                        {
+                            "type": "actions",
+                            "elements": [
+                                {
+                                    "type": "button",
+                                    "text": {
+                                        "type": "plain_text",
+                                        "text": "Visit Job"
+                                    },
+                                    "url": "$CIRCLE_BUILD_URL"
+                                }
+                            ]
+                        }
+                    ]
                 }
 
 # Orchestrate or schedule a set of jobs
