@@ -24,7 +24,20 @@ jobs:
                             "type": "mrkdwn",
                             "text": ":white_check_mark:   *SUCCESS*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n$CIRCLE_BUILD_URL"
                         }
-                    }
+                    },
+                    {
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "Visit Job"
+            					},
+            					"value": "$CIRCLE_BUILD_URL"
+            				}
+            			]
+            		}
                 ]
             }
 
