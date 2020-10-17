@@ -25,60 +25,9 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - slack/notify:
-          event: fail
-          custom: |
-            {
-                "blocks": [
-                    {
-                        "type": "section",
-                        "text": {
-                            "type": "mrkdwn",
-                            "text": ":x:   *FAILURE*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch failed.\n$CIRCLE_BUILD_URL"
-                        }
-                    },
-                    {
-            			"type": "actions",
-            			"elements": [
-            				{
-            					"type": "button",
-            					"text": {
-            						"type": "plain_text",
-            						"text": "Visit Job"
-            					},
-            					"url": "$CIRCLE_BUILD_URL"
-            				}
-            			]
-            		}
-                ]
-            }
-      - slack/notify:
-          event: pass
-          custom: |
-            {
-                "blocks": [
-                    {
-                        "type": "section",
-                        "text": {
-                            "type": "mrkdwn",
-                            "text": ":white_check_mark:   *SUCCESS*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n$CIRCLE_BUILD_URL"
-                        }
-                    },
-                    {
-            			"type": "actions",
-            			"elements": [
-            				{
-            					"type": "button",
-            					"text": {
-            						"type": "plain_text",
-            						"text": "Visit Job"
-            					},
-            					"url": "$CIRCLE_BUILD_URL"
-            				}
-            			]
-            		}
-                ]
-            }
+      - run:
+          command: |
+            exit 0
 
 workflows:
   version: 2
@@ -93,3 +42,58 @@ workflows:
             requires:
               - job1
               - job2
+            post-steps:
+              - slack/notify:
+                  event: fail
+                  custom: |
+                    {
+                        "blocks": [
+                            {
+                                "type": "section",
+                                "text": {
+                                    "type": "mrkdwn",
+                                    "text": ":x:   *FAILURE*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch failed.\n$CIRCLE_BUILD_URL"
+                                }
+                            },
+                            {
+                    			"type": "actions",
+                    			"elements": [
+                    				{
+                    					"type": "button",
+                    					"text": {
+                    						"type": "plain_text",
+                    						"text": "Visit Job"
+                    					},
+                    					"url": "$CIRCLE_BUILD_URL"
+                    				}
+                    			]
+                    		}
+                        ]
+                    }
+              - slack/notify:
+                  event: pass
+                  custom: |
+                    {
+                        "blocks": [
+                            {
+                                "type": "section",
+                                "text": {
+                                    "type": "mrkdwn",
+                                    "text": ":white_check_mark:   *SUCCESS*\n$CIRCLE_PROJECT_USERNAME build number $CIRCLE_BUILD_NUM in $CIRCLE_PROJECT_REPONAME on the $CIRCLE_BRANCH branch was pretty good.\n$CIRCLE_BUILD_URL"
+                                }
+                            },
+                            {
+                    			"type": "actions",
+                    			"elements": [
+                    				{
+                    					"type": "button",
+                    					"text": {
+                    						"type": "plain_text",
+                    						"text": "Visit Job"
+                    					},
+                    					"url": "$CIRCLE_BUILD_URL"
+                    				}
+                    			]
+                    		}
+                        ]
+                    }
