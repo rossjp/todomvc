@@ -42,7 +42,8 @@ workflows:
             context: ross-test
             requires:
               - job1
-            post-steps:
+              - job2
+            pre-steps:
               - slack/notify:
                   event: fail
                   custom: |
