@@ -14,7 +14,7 @@ orbs:
                 echo "export STRATA_SLACK_MENTIONS=ross" >> $BASH_ENV
           - slack/notify:
               event: fail
-              mentions: "@$STRATA_SLACK_MENTIONS"
+              mentions: "@ross"
               custom: |
                 {
                     "text": ":no_entry: Build Failed in $CIRCLE_PROJECT_REPONAME",
