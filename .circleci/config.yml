@@ -13,7 +13,7 @@ orbs:
               custom: |
                 {
                     "attachments": [{
-                      "color": "#42e2f4",
+                      "color": "#ed2610",
                       "blocks": [
                           {
                               "type": "section",
