@@ -42,7 +42,7 @@ workflows:
             requires:
               - job1
               - job2
-            post-steps:
+            pre-steps:
               - slack/notify:
                   event: fail
                   custom: |
