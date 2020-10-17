@@ -9,6 +9,7 @@ orbs:
       my_slack:
         steps:
           - slack/notify:
+              color: '#42e2f4'
               event: fail
               custom: |
                 {
@@ -36,6 +37,7 @@ orbs:
                     ]
                 }
           - slack/notify:
+              color: '#42e2f4'
               event: pass
               custom: |
                 {
