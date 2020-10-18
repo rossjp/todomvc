@@ -85,8 +85,8 @@ jobs:
       - run:
           name: status
           command: |
-            echo $CCI_STATUS
-            echo $ROSS_STATUS
+            echo "$CCI_STATUS"
+            echo "${ROSS_STATUS}"
             echo "export ROSS_STATUS=ab$CCI_STATUS:$ROSS_STATUS" >> $BASH_ENV
       - my_orb/my_slack
   job2:
