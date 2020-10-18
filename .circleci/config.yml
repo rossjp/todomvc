@@ -16,7 +16,7 @@ orbs:
           - slack/notify:
               event: fail
 #              template: basic_fail_1
-#              mentions: '<@D012NHZDSP6>,@ross'
+              mentions: '<@D012NHZDSP6>,@ross'
               custom: |
                 {
                     "text": ":no_entry: Build Failed in $CIRCLE_PROJECT_REPONAME",
@@ -53,7 +53,7 @@ orbs:
                             "type": "section",
                             "text": {
                                 "type": "mrkdwn",
-                                "text": ":white_check_mark: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good."
+                                "text": ":white_check_mark: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good.\n*Mentions:* @ross"
                             }
                         },
                         {
