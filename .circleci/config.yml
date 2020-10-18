@@ -107,7 +107,7 @@ jobs:
     steps:
       - run:
           name: Check it all
-          command:
+          command: |
             echo "catting /tmp/ross"
             cat /tmp/ross
 
