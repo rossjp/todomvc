@@ -15,34 +15,34 @@ orbs:
                 echo "export STRATA_SLACK_MENTIONS=ross" >> $BASH_ENV
           - slack/notify:
               event: fail
-#              template: basic_fail_1
+              template: basic_fail_1
               mentions: '<@D012NHZDSP6>,@ross'
-              custom: |
-                {
-                    "text": ":no_entry: Build Failed in $CIRCLE_PROJECT_REPONAME",
-                    "blocks": [
-                        {
-                            "type": "section",
-                            "text": {
-                                "type": "mrkdwn",
-                                "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed."
-                            }
-                        },
-                        {
-                            "type": "actions",
-                            "elements": [
-                                {
-                                    "type": "button",
-                                    "text": {
-                                        "type": "plain_text",
-                                        "text": "Visit Job"
-                                    },
-                                    "url": "$CIRCLE_BUILD_URL"
-                                }
-                            ]
-                        }
-                    ]
-                }
+#              custom: |
+#                {
+#                    "text": ":no_entry: Build Failed in $CIRCLE_PROJECT_REPONAME",
+#                    "blocks": [
+#                        {
+#                            "type": "section",
+#                            "text": {
+#                                "type": "mrkdwn",
+#                                "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed."
+#                            }
+#                        },
+#                        {
+#                            "type": "actions",
+#                            "elements": [
+#                                {
+#                                    "type": "button",
+#                                    "text": {
+#                                        "type": "plain_text",
+#                                        "text": "Visit Job"
+#                                    },
+#                                    "url": "$CIRCLE_BUILD_URL"
+#                                }
+#                            ]
+#                        }
+#                    ]
+#                }
           - slack/notify:
               event: pass
               custom: |
