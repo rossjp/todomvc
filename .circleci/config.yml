@@ -120,5 +120,8 @@ workflows:
             context: ross-test
         - job2:
             context: ross-test
-        - job3
+        - job3:
+            requires:
+              - job1
+
 
