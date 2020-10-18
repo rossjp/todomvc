@@ -86,7 +86,7 @@ jobs:
           name: status
           command: |
             echo $CCI_STATUS
-            echo "export ROSS_STATUS=$CCI_STATUS:$ROSS_STATUS" >> $BASH_ENV
+            echo "export ROSS_STATUS=ab$CCI_STATUS:$ROSS_STATUS" >> $BASH_ENV
       - my_orb/my_slack
   job2:
     docker:
@@ -100,7 +100,7 @@ jobs:
           name: status
           command: |
             echo $CCI_STATUS
-            echo "export ROSS_STATUS=$CCI_STATUS:$ROSS_STATUS" >> $BASH_ENV
+            echo "export ROSS_STATUS=cd$CCI_STATUS:$ROSS_STATUS" >> $BASH_ENV
       - my_orb/my_slack
 
   job3:
