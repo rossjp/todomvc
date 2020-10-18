@@ -15,7 +15,7 @@ orbs:
           - slack/notify:
               event: fail
               template: basic_fail_1
-              mentions: '<@D012NHZDSP6>,@ross'
+#              mentions: '<@D012NHZDSP6>,@ross'
 #              custom: |
 #                {
 #                    "text": ":no_entry: Build Failed in $CIRCLE_PROJECT_REPONAME",
@@ -82,6 +82,10 @@ jobs:
           command: |
             echo "Hello world"
             exit 0
+      - run:
+          name: status
+          command: |
+            echo $CCI_STATUS >> /tmp/ross
       - my_orb/my_slack
   job2:
     docker:
@@ -91,7 +95,21 @@ jobs:
           name: Success
           command: |
             exit 1
+      - run:
+          name: status
+          command: |
+            echo $CCI_STATUS >> /tmp/ross
       - my_orb/my_slack
+
+  job3:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: Check it all
+          command:
+            echo "catting /tmp/ross"
+            cat /tmp/ross
 
 workflows:
   version: 2
@@ -102,3 +120,5 @@ workflows:
             context: ross-test
         - job2:
             context: ross-test
+        - job3
+
