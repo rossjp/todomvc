@@ -16,7 +16,7 @@ orbs:
           - slack/notify:
               event: fail
               template: basic_fail_1
-              mentions: '<@D012NHZDSP6>,@ross>'
+              mentions: '@ross'
 #              custom: |
 #                {
 #                    "text": ":no_entry: Build Failed in $CIRCLE_PROJECT_REPONAME",
