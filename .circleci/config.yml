@@ -19,61 +19,65 @@ orbs:
               custom: |
                 {
                     "attachments": [
-                        "color": "e94146",
-                        "blocks": [
-                            {
-                                "type": "section",
-                                "text": {
-                                    "type": "mrkdwn",
-                                    "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed."
-                                }
-                            },
-                            {
-                                "type": "actions",
-                                "elements": [
-                                    {
-                                        "type": "button",
-                                        "text": {
-                                            "type": "plain_text",
-                                            "text": "Visit Job"
-                                        },
-                                        "url": "$CIRCLE_BUILD_URL"
+                        {
+                            "color": "e94146",
+                            "blocks": [
+                                {
+                                    "type": "section",
+                                    "text": {
+                                        "type": "mrkdwn",
+                                        "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed."
                                     }
-                                ]
-                            }
+                                },
+                                {
+                                    "type": "actions",
+                                    "elements": [
+                                        {
+                                            "type": "button",
+                                            "text": {
+                                                "type": "plain_text",
+                                                "text": "Visit Job"
+                                            },
+                                            "url": "$CIRCLE_BUILD_URL"
+                                        }
+                                    ]
+                                }
+                            ]
                         ]
-                    ]
+                    }
                 }
           - slack/notify:
               event: pass
               custom: |
                 {
                     "attachments": [
-                        "color": "0abb25",
-                        "text": ":white_check_mark: Build Succeeded in $CIRCLE_PROJECT_REPONAME",
-                        "blocks": [
-                            {
-                                "type": "section",
-                                "text": {
-                                    "type": "mrkdwn",
-                                    "text": ":white_check_mark: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good.\n*Mentions:* @ross"
-                                }
-                            },
-                            {
-                                "type": "actions",
-                                "elements": [
-                                    {
-                                        "type": "button",
-                                        "text": {
-                                            "type": "plain_text",
-                                            "text": "Visit Job"
-                                        },
-                                        "url": "$CIRCLE_BUILD_URL"
+                        {
+                            "color": "0abb25",
+                            "text": ":white_check_mark: Build Succeeded in $CIRCLE_PROJECT_REPONAME",
+                            "blocks": [
+                                {
+                                    "type": "section",
+                                    "text": {
+                                        "type": "mrkdwn",
+                                        "text": ":white_check_mark: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good.\n*Mentions:* @ross"
                                     }
-                                ]
-                            }
+                                },
+                                {
+                                    "type": "actions",
+                                    "elements": [
+                                        {
+                                            "type": "button",
+                                            "text": {
+                                                "type": "plain_text",
+                                                "text": "Visit Job"
+                                            },
+                                            "url": "$CIRCLE_BUILD_URL"
+                                        }
+                                    ]
+                                }
+                            ]
                         ]
-                    ]
+                    }
                 }
 
 # Orchestrate or schedule a set of jobs
