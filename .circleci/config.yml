@@ -54,7 +54,6 @@ orbs:
                     "attachments": [
                         {
                             "color": "0abb25",
-                            "text": ":white_check_mark: Build Succeeded in $CIRCLE_PROJECT_REPONAME",
                             "blocks": [
                                 {
                                     "type": "section",
