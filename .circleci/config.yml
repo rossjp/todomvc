@@ -46,6 +46,14 @@ orbs:
                                             "text": "$CIRCLE_PROJECT_USERNAME"
                                         },
                                         {
+                                            "type": "plain_text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "plain_text",
+                                            "text": " "
+                                        },
+                                        {
                                             "type": "mrkdwn",
                                             "text": "*Branch*"
                                         },
