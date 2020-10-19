@@ -93,8 +93,42 @@ orbs:
                                     "type": "section",
                                     "text": {
                                         "type": "mrkdwn",
-                                        "text": ":white_check_mark: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch was pretty good.\n*Mentions:* @ross"
-                                    }
+                                        "text": ":no_entry: A $CIRCLE_JOB job has failed. "
+                                    },
+                                    "fields": [
+                                        {
+                                            "type": "mrkdwn",
+                                            "text": ":notebook: *Project*"
+                                        },
+                                        {
+                                            "type": "mrkdwn",
+                                            "text": ":eyes: *Committer*"
+                                        },
+                                        {
+                                            "type": "plain_text",
+                                            "text": "$CIRCLE_PROJECT_REPONAME"
+                                        },
+                                        {
+                                            "type": "plain_text",
+                                            "text": "$CIRCLE_PROJECT_USERNAME"
+                                        },
+                                        {
+                                            "type": "mrkdwn",
+                                            "text": ":label: *Branch*"
+                                        },
+                                        {
+                                            "type": "mrkdwn",
+                                            "text": ":hash: *Build Number*"
+                                        },
+                                        {
+                                            "type": "plain_text",
+                                            "text": "-> $CIRCLE_BRANCH"
+                                        },
+                                        {
+                                            "type": "plain_text",
+                                            "text": "-> $CIRCLE_BUILD_NUM"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "actions",
@@ -113,7 +147,6 @@ orbs:
                         }
                     ]
                 }
-
 # Orchestrate or schedule a set of jobs
 jobs:
   job1:
