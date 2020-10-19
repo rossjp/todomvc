@@ -31,11 +31,11 @@ orbs:
                                     "fields": [
                                         {
                                             "type": "mrkdwn",
-                                            "text": "*Project*"
+                                            "text": ":notebook: *Project*"
                                         },
                                         {
                                             "type": "mrkdwn",
-                                            "text": "*Committer*"
+                                            "text": ":person-shrugging: *Committer*"
                                         },
                                         {
                                             "type": "plain_text",
@@ -47,11 +47,11 @@ orbs:
                                         },
                                         {
                                             "type": "mrkdwn",
-                                            "text": "*Branch*"
+                                            "text": ":label: *Branch*"
                                         },
                                         {
                                             "type": "mrkdwn",
-                                            "text": "*Build Number*"
+                                            "text": ":hash: *Build Number*"
                                         },
                                         {
                                             "type": "plain_text",
