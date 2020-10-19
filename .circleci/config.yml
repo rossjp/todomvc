@@ -35,15 +35,15 @@ orbs:
                                         },
                                         {
                                             "type": "mrkdwn",
-                                            "text": ":person-shrugging: *Committer*"
+                                            "text": ":eyes: *Committer*"
                                         },
                                         {
                                             "type": "plain_text",
-                                            "text": "-> $CIRCLE_PROJECT_REPONAME"
+                                            "text": "$CIRCLE_PROJECT_REPONAME"
                                         },
                                         {
                                             "type": "plain_text",
-                                            "text": "-> $CIRCLE_PROJECT_USERNAME"
+                                            "text": "$CIRCLE_PROJECT_USERNAME"
                                         },
                                         {
                                             "type": "mrkdwn",
