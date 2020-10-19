@@ -44,7 +44,13 @@ orbs:
                                         {
                                             "type": "plain_text",
                                             "text": "$CIRCLE_PROJECT_USERNAME"
-                                        },
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "fields": [
+
                                         {
                                             "type": "mrkdwn",
                                             "text": ":label: *Branch*"
