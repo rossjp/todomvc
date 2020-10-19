@@ -31,11 +31,11 @@ orbs:
                                     "fields": [
                                         {
                                             "type": "mrkdwn",
-                                            "text": ":notebook: *Project*"
+                                            "text": "*Project*"
                                         },
                                         {
                                             "type": "mrkdwn",
-                                            "text": ":eyes: *Committer*"
+                                            "text": "*Committer*"
                                         },
                                         {
                                             "type": "plain_text",
@@ -53,11 +53,11 @@ orbs:
 
                                         {
                                             "type": "mrkdwn",
-                                            "text": ":label: *Branch*"
+                                            "text": "*Branch*"
                                         },
                                         {
                                             "type": "mrkdwn",
-                                            "text": ":hash: *Build Number*"
+                                            "text": "*Build Number*"
                                         },
                                         {
                                             "type": "plain_text",
@@ -99,7 +99,7 @@ orbs:
                                     "type": "section",
                                     "text": {
                                         "type": "mrkdwn",
-                                        "text": ":white_check_mark: A $CIRCLE_JOB job has failed. "
+                                        "text": ":white_check_mark: A $CIRCLE_JOB job has succeeded."
                                     },
                                     "fields": [
                                         {
