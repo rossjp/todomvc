@@ -61,11 +61,11 @@ orbs:
                                         },
                                         {
                                             "type": "plain_text",
-                                            "text": "-> $CIRCLE_BRANCH"
+                                            "text": "$CIRCLE_BRANCH"
                                         },
                                         {
                                             "type": "plain_text",
-                                            "text": "-> $CIRCLE_BUILD_NUM"
+                                            "text": "$CIRCLE_BUILD_NUM"
                                         }
                                     ]
                                 },
@@ -104,11 +104,11 @@ orbs:
                                     "fields": [
                                         {
                                             "type": "mrkdwn",
-                                            "text": ":notebook: *Project*"
+                                            "text": "*Project*"
                                         },
                                         {
                                             "type": "mrkdwn",
-                                            "text": ":eyes: *Committer*"
+                                            "text": "*Committer*"
                                         },
                                         {
                                             "type": "plain_text",
@@ -117,14 +117,19 @@ orbs:
                                         {
                                             "type": "plain_text",
                                             "text": "$CIRCLE_PROJECT_USERNAME"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "fields": [
+                                        {
+                                            "type": "mrkdwn",
+                                            "text": "*Branch*"
                                         },
                                         {
                                             "type": "mrkdwn",
-                                            "text": ":label: *Branch*"
-                                        },
-                                        {
-                                            "type": "mrkdwn",
-                                            "text": ":hash: *Build Number*"
+                                            "text": "*Build Number*"
                                         },
                                         {
                                             "type": "plain_text",
