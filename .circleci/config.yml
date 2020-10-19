@@ -26,7 +26,7 @@ orbs:
                                     "type": "section",
                                     "text": {
                                         "type": "mrkdwn",
-                                        "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *$CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed."
+                                        "text": ":no_entry: *$CIRCLE_PROJECT_USERNAME* job *$CIRCLE_JOB* build $CIRCLE_BUILD_NUM in *         $CIRCLE_PROJECT_REPONAME* on the *$CIRCLE_BRANCH* branch failed."
                                     }
                                 },
                                 {
@@ -43,9 +43,10 @@ orbs:
                                     ]
                                 }
                             ]
-                        ]
-                    }
+                        }
+                    ]
                 }
+
           - slack/notify:
               event: pass
               custom: |
@@ -76,8 +77,8 @@ orbs:
                                     ]
                                 }
                             ]
-                        ]
-                    }
+                        }
+                    ]
                 }
 
 # Orchestrate or schedule a set of jobs
